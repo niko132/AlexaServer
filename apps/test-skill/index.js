@@ -2,7 +2,7 @@ module.change_code = 1;
 'use_strict';
 
 var alexa = require('alexa-app');
-var app = new alexa.app('test-skill');
+var app = new alexa.app('counter');
 
 app.launch(function(request, response) {
 		response.say('Welcome to Counting Master').reprompt('Tell me to which number I should count').shouldEndSession(false);
