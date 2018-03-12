@@ -22,12 +22,12 @@ app.intent('count',
 			"toNumber":"AMAZON.NUMBER"
 		},
 		"utterances":[
-			"count from {fromNumber} to {toNumber}",
-			"count to {toNumber}",
-			"tell me the numbers between {fromNumber} and {toNumber}",
-			"tell me the numbers to {toNumber}",
-			"say the numbers from {fromNumber} to {toNumber}",
-			"say the numbers to {toNumber}"
+			"count from {-|fromNumber} to {-|toNumber}",
+			"count to {-|toNumber}",
+			"tell me the numbers between {-|fromNumber} and {-|toNumber}",
+			"tell me the numbers to {-|toNumber}",
+			"say the numbers from {-|fromNumber} to {-|toNumber}",
+			"say the numbers to {-|toNumber}"
 		]
 	},
 	function(request, response) {
