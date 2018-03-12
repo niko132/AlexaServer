@@ -5,7 +5,7 @@ var alexa = require('alexa-app');
 var app = new alexa.app('test-skill');
 
 app.launch(function(request, response) {
-		response.say('Welcome to your test skill').reprompt('Way to go. You got it to run. Bad ass.').shouldEndSession(false);
+		response.say('Welcome to Counting Master').reprompt('Tell me to which number I should count').shouldEndSession(false);
 });
 
 app.error = function(exception, request, response) {
@@ -15,35 +15,24 @@ app.error = function(exception, request, response) {
 	response.say('Sorry an error occured ' + error.message);
 };
 
-app.intent('sayNumber',
-	{
-		"slots":{"number":"NUMBER"},
-		"utterances":[
-			"say the number {1-100|number}",
-			"give me the number {1-100|number}",
-			"tell me the number {1-100|number}",
-			"I want to hear you say the number {1-100|number}"]
-	},
-	function(request, response) {
-		var number = request.slot('number');
-		response.say("You asked for the number " + number);
-	}
-);
-
 app.intent('count',
 	{
-		"slots":{"fromNumber":"AMAZON.NUMBER", "toNumber":"AMAZON.NUMBER"},
+		"slots": {
+			"fromNumber": "AMAZON.NUMBER",
+			"toNumber":"AMAZON.NUMBER"
+		},
 		"utterances":[
 			"count from {fromNumber} to {toNumber}",
 			"count to {toNumber}",
 			"tell me the numbers between {fromNumber} and {toNumber}",
 			"tell me the numbers to {toNumber}",
 			"say the numbers from {fromNumber} to {toNumber}",
-			"say the numbers to {toNumber}"]
+			"say the numbers to {toNumber}"
+		]
 	},
 	function(request, response) {
-		var fromNumber = request.slot('fromNumber');
-		var toNumber = request.slot('toNumber');
+		var fromNumber = request.slots['fromNumber'].value;
+	var toNumber = request.slots['toNumber'].value;
 		
 		if (!toNumber) {
 			response.say("Please tell me a number to which I count");
