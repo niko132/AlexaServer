@@ -32,7 +32,7 @@ app.intent('count',
 	},
 	function(request, response) {
 		var fromNumber = request.slots['fromNumber'].value;
-	var toNumber = request.slots['toNumber'].value;
+		var toNumber = request.slots['toNumber'].value;
 		
 		if (!toNumber) {
 			response.say("Please tell me a number to which I count");
@@ -50,7 +50,11 @@ app.intent('count',
 				var output = "";
 				
 				for (var i = fromNumberInt; i <= toNumberInt; i++) {
-					output += i + ", ";
+					output += i;
+					
+					if (i != toNumber) {
+						output += ", ";
+					}
 				}
 				
 				response.say(output);
