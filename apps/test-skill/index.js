@@ -5,7 +5,11 @@ var alexa = require('alexa-app');
 var app = new alexa.app('counter');
 
 app.launch(function(request, response) {
-		response.say('Welcome to Counting Master').reprompt('Tell me to which number I should count').shouldEndSession(false);
+		response.say('Welcome to Counting Master. Up to what number should I count?').shouldEndSession(false);
+});
+
+app.sessionEnded(function(request, response) {
+	
 });
 
 app.error = function(exception, request, response) {
@@ -35,7 +39,7 @@ app.intent('count',
 		var toNumber = request.slots['toNumber'].value;
 		
 		if (!toNumber) {
-			response.say("Please tell me a number to which I count");
+			response.say("Please tell me a number to which I should count").shouldEndSession(false);
 		} else {
 			var toNumberInt = parseInt(toNumber);
 			var fromNumberInt = 1;
@@ -45,7 +49,7 @@ app.intent('count',
 			}
 			
 			if (fromNumberInt > toNumberInt) {
-				response.say("I can't count backwards");
+				response.say("Sorry, I can't count backwards");
 			} else {
 				var output = "";
 				
@@ -62,5 +66,9 @@ app.intent('count',
 		}
 	}
 );
+
+app.intent('AMAZON.HelpIntent', function(request, response) {
+	response.say("Hi, I'm your help");
+});
 
 module.exports = app;
