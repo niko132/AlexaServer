@@ -44,7 +44,7 @@ app.intent('count',
 			var toNumberInt = parseInt(toNumber);
 			var fromNumberInt = 1;
 			
-			if (fromNumber) {
+			if (fromNumber && !isNaN(fromNumber)) {
 				fromNumberInt = parseInt(fromNumber);
 			}
 			
