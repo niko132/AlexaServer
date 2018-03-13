@@ -72,11 +72,11 @@ app.intent('AMAZON.HelpIntent', function(request, response) {
 });
 
 app.intent('AMAZON.StopIntent', function(request, response) {
-	response.say("I'm Counting Master. Just say count from four to twenty and I will do it.");
+	
 });
 
 app.intent('AMAZON.CancelIntent', function(request, response) {
-	response.say("I'm Counting Master. Just say count from four to twenty and I will do it.");
+	
 });
 
 module.exports = app;
