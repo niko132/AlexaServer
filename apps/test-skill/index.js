@@ -68,8 +68,7 @@ app.intent('count',
 );
 
 app.intent('AMAZON.HelpIntent', function(request, response) {
-	response.say("Hi, I'm your help");
-}
-);
+	response.say("I'm Counting Master. Just say count from four to twenty and I will do it.");
+});
 
 module.exports = app;
