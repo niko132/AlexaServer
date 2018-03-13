@@ -38,7 +38,7 @@ app.intent('count',
 		var fromNumber = request.slots['fromNumber'].value;
 		var toNumber = request.slots['toNumber'].value;
 		
-		if (!toNumber) {
+		if (!toNumber || isNan(toNumber)) {
 			response.say("Please tell me a number to which I should count").shouldEndSession(false);
 		} else {
 			var toNumberInt = parseInt(toNumber);
