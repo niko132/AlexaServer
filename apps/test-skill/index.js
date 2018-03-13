@@ -67,8 +67,13 @@ app.intent('count',
 	}
 );
 
-app.intent('AMAZON.HelpIntent', function(request, response) {
+app.intent('AMAZON.HelpIntent',
+	{
+	
+	}
+	function(request, response) {
 	response.say("Hi, I'm your help");
-});
+	}
+);
 
 module.exports = app;
