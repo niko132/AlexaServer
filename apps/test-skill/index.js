@@ -49,7 +49,7 @@ app.intent('count',
 			}
 			
 			if (fromNumberInt > toNumberInt) {
-				response.say("Sorry, I can't count backwards");
+				response.say("Sorry, I can't count backwards").shouldEndSession(false);
 			} else {
 				var output = "";
 				
@@ -68,7 +68,7 @@ app.intent('count',
 );
 
 app.intent('AMAZON.HelpIntent', function(request, response) {
-	response.say("I'm Counting Master. Just say count from four to twenty and I will do it.");
+	response.say("I'm Counting Master. Just say count from four to twenty and I will do it.").shouldEndSession(false);
 });
 
 app.intent('AMAZON.StopIntent', function(request, response) {
