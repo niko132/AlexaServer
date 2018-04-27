@@ -2,7 +2,7 @@ module.change_code = 1;
 'use_strict';
 
 var alexa = require('alexa-app');
-var app = new alexa.app('counter');
+var app = new alexa.app('temp');
 
 app.launch(function(request, response) {
 		response.say('Welcome to Temp Master. Which temperature should I convert?').shouldEndSession(false);
