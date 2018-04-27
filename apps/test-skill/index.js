@@ -5,7 +5,7 @@ var alexa = require('alexa-app');
 var app = new alexa.app('counter');
 
 app.launch(function(request, response) {
-		response.say('Welcome to Counting Master. Up to what number should I count?').shouldEndSession(false);
+		response.say('Welcome to the Counter. Up to what number should I count?').shouldEndSession(false);
 });
 
 app.sessionEnded(function(request, response) {
@@ -68,7 +68,7 @@ app.intent('count',
 );
 
 app.intent('AMAZON.HelpIntent', function(request, response) {
-	response.say("I'm Counting Master. Just say \"count from five to twenty\" and I will do it.").shouldEndSession(false);
+	response.say("I'm the Counter. Just say \"count from five to twenty\" and I will do it.").shouldEndSession(false);
 });
 
 app.intent('AMAZON.StopIntent', function(request, response) {
