@@ -49,7 +49,7 @@ app.intent('count',
 			}
 			
 			if (fromNumberInt > toNumberInt) {
-				response.say("Sorry, I can't count backwards").shouldEndSession(false);
+				response.say("Sorry, I can't count backwards. Please tell me another number.").shouldEndSession(false);
 			} else {
 				var output = "";
 				
