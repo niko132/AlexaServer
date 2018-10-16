@@ -7,27 +7,26 @@ var app = new alexa.app('display');
 app.launch(function(request, response) {
 //		response.say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
 	response.directive({
-          "template": {
-            "backButtonBehavior": "VISIBLE",
-            "backgroundImage": {
-              "contentDescription": "The Image",
-              "sources": [
-                {
-                  "url": "https://example.com/barimage.png",
-                  "size": "x-small",
-                  "widthPixels": 0,
-                  "heightPixels": 0
-                }
-              ]
-            },
-            "title": "Mohawk Austin",
-            "textContent": {
-              "primaryText": {
-                "text": "<font size='4'><b>Happy Hour 5-8 PM: Over 60 Beers, 60 Spirits and 16 Drafts</b></font>"
+          "type" : "Display.RenderTemplate",
+          "template" : {
+              "type" : "BodyTemplate6",
+              "backButton" : "HIDDEN",
+              "backgroundImage" : {
+                  "contentDescription" : "",
+                  "sources" : [{
+                          "url" : "https://matt-kruse.github.io/alexa-color-tap/game.jpg",
+                          "size" : "MEDIUM"
+                      }
+                  ]
+              },
+              "textContent" : {
+                  "primaryText" : {
+                      "text" : "Color Tap!",
+                      "type" : "PlainText"
+                  }
               }
-            }
           }
-        }).say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
+      }).say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
 });
 
 app.sessionEnded(function(request, response) {
