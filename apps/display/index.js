@@ -14,8 +14,7 @@ app.launch(function(request, response) {
               "backgroundImage" : {
                   "contentDescription" : "",
                   "sources" : [{
-                          "url" : "https://matt-kruse.github.io/alexa-color-tap/game.jpg",
-                          "size" : "MEDIUM"
+                          "url" : "https://matt-kruse.github.io/alexa-color-tap/game.jpg"
                       }
                   ]
               },
