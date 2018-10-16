@@ -5,7 +5,25 @@ var alexa = require('alexa-app');
 var app = new alexa.app('display');
 
 app.launch(function(request, response) {
-		response.say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
+//		response.say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
+	response.directive({
+		"type": 'Display.RenderTemplate', 
+		"template": { 
+			"type": "BodyTemplate2",
+			"token": "CheeseDetailView",
+			"backButton": "HIDDEN",
+			"backgroundImage": https://www.example.com/background-image1.png,
+			"title": "Parmigiano Reggiano",
+			"image": https://www.example.com/parmigiano-reggiano.png,
+			"textContent": {
+				"text"="Parmigiano Reggiano
+Country of origin: Italy
+
+ Parmesan cheese is made from unpasteurized cow’s milk. It has a hard, gritty texture, and is fruity and nutty in taste.",
+				"type" = "RichText"
+			}
+		}
+	}).say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
 });
 
 app.sessionEnded(function(request, response) {
