@@ -7,23 +7,27 @@ var app = new alexa.app('display');
 app.launch(function(request, response) {
 //		response.say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
 	response.directive({
-		"type": 'Display.RenderTemplate', 
-		"template": { 
-			"type": "BodyTemplate2",
-			"token": "CheeseDetailView",
-			"backButton": "HIDDEN",
-			"backgroundImage": https://www.example.com/background-image1.png,
-			"title": "Parmigiano Reggiano",
-			"image": https://www.example.com/parmigiano-reggiano.png,
-			"textContent": {
-				"text"="Parmigiano Reggiano
-Country of origin: Italy
-
- Parmesan cheese is made from unpasteurized cow’s milk. It has a hard, gritty texture, and is fruity and nutty in taste.",
-				"type" = "RichText"
-			}
-		}
-	}).say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
+          "template": {
+            "backButtonBehavior": "VISIBLE",
+            "backgroundImage": {
+              "contentDescription": "The Image",
+              "sources": [
+                {
+                  "url": "https://example.com/barimage.png",
+                  "size": "x-small",
+                  "widthPixels": 0,
+                  "heightPixels": 0
+                }
+              ]
+            },
+            "title": "Mohawk Austin",
+            "textContent": {
+              "primaryText": {
+                "text": "<font size='4'><b>Happy Hour 5-8 PM: Over 60 Beers, 60 Spirits and 16 Drafts</b></font>"
+              }
+            }
+          }
+        }).say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
 });
 
 app.sessionEnded(function(request, response) {
