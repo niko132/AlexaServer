@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "alexa-app-server": "^3.0.1"
+    "alexa-app-server": "^3.0.1",
+	"canvas": "^1.6.13"
   },
   "devDependencies": {},
   "scripts": {
