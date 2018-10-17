@@ -11,10 +11,11 @@ var server = new AlexaAppServer({
 
 server.start();
 
-var Canvas = require('canvas')
-  , Image = Canvas.Image
-  , canvas = new Canvas(200, 200)
-  , ctx = canvas.getContext('2d');
+var Canvas = require('canvas'),
+	Image = Canvas.Image,
+	canvas = new Canvas(200, 200),
+	ctx = canvas.getContext('2d'),
+	fs = require('fs');
  
 ctx.font = '30px Impact';
 ctx.rotate(.1);
@@ -28,3 +29,12 @@ ctx.lineTo(50 + te.width, 102);
 ctx.stroke();
  
 console.log('<img src="' + canvas.toDataURL() + '" />');
+
+var pngfile = fs.createWriteStream('./test.png'),
+	stream = canvas.pngStream();
+stream.on('data', function(chunk) {
+	pngfile.write(chunk);
+});
+stream.on('end', function() {
+	console.log('saved png');
+});
