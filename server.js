@@ -30,7 +30,7 @@ ctx.stroke();
  
 console.log('<img src="' + canvas.toDataURL() + '" />');
 
-var pngfile = fs.createWriteStream('app/test.png'),
+var pngfile = fs.createWriteStream('test.png'),
 	stream = canvas.pngStream();
 stream.on('data', function(chunk) {
 	pngfile.write(chunk);
