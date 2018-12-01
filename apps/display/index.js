@@ -6,7 +6,7 @@ var app = new alexa.app('display');
 
 app.launch(function(request, response) {
 //		response.say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
-	response.say('Welcome to Display. What color do you want to see?').shouldEndSession(false);
+//	response.say('Welcome to Display. What color do you want to see?').shouldEndSession(false);
 	
 	response.directive({
 		"type" : "Display.RenderTemplate",
