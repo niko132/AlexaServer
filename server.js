@@ -9,9 +9,8 @@ var server = new AlexaAppServer({
 	verify: true
 });
 
-server.express.use(express.static('public'));
-
 server.start();
+server.express.use(express.static('public'));
 
 var Canvas = require('canvas'),
 	Image = Canvas.Image,
