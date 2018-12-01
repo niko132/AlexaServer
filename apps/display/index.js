@@ -59,7 +59,7 @@ app.intent('color',
 						}
 					}
 				}
-			}).say(color).shouldEndSession(false);
+			}).say("Here is " + color).shouldEndSession(false);
 		}
 	}
 );
