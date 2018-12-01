@@ -24,8 +24,7 @@ app.launch(function(request, response) {
 					"text" : "Welcome to the Color Display",
 					"type" : "PlainText"
 				}
-			},
-			"hintText" : "Give me a color"
+			}
 		}
 	}).say('Welcome to the Color Display. What color do you want to see?').shouldEndSession(false);
 });
