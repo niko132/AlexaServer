@@ -3,11 +3,6 @@ module.change_code = 1;
 
 var alexa = require('alexa-app');
 var app = new alexa.app('display');
-var express = require('express');
-var port = process.env.PORT || 3000;
-
-var exp = express();
-exp.use(express.static('public'));
 
 app.launch(function(request, response) {
 //		response.say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
@@ -19,7 +14,7 @@ app.launch(function(request, response) {
               "backgroundImage" : {
                   "contentDescription" : "",
                   "sources" : [{
-                          "url" : "https://matt-kruse.github.io/alexa-color-tap/game.jpg"
+                          "url" : "https://niko132-alexa.herokuapp.com/blue.png"
                       }
                   ]
               },
