@@ -7,6 +7,26 @@ var app = new alexa.app('display');
 app.launch(function(request, response) {
 //		response.say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
 	response.say('Welcome to Display. What color do you want to see?').shouldEndSession(false);
+	
+	response.directive({
+		"type" : "Display.RenderTemplate",
+		"template" : {
+			"type" : "BodyTemplate6",
+			"backButton" : "HIDDEN",
+			"backgroundImage" : {
+				"contentDescription" : "title",
+				"sources" : [{
+					"url" : "https://niko132-alexa.herokuapp.com/title.png"
+				}]
+			},
+			"textContent" : {
+				"primaryText" : {
+					"text" : "Colors",
+					"type" : "PlainText"
+				}
+			}
+		}
+	}).say('Welcome to Display. What color do you want to see?').shouldEndSession(false);
 });
 
 app.sessionEnded(function(request, response) {
