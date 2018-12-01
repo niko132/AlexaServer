@@ -10,7 +10,7 @@ var server = new AlexaAppServer({
 });
 
 var express = require('express');
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
 
 var exp = express();
 exp.use(express.static('public'));

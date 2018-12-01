@@ -1,11 +1,12 @@
 {
   "name": "alexa-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "\"# AlexaServer\"",
   "main": "server.js",
   "dependencies": {
     "alexa-app-server": "^3.0.1",
-	"canvas": "^1.6.13"
+    "canvas": "^1.6.13",
+    "express": "^4.16.4"
   },
   "devDependencies": {},
   "scripts": {
@@ -13,5 +14,13 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niko132/AlexaServer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/niko132/AlexaServer/issues"
+  },
+  "homepage": "https://github.com/niko132/AlexaServer#readme"
 }
