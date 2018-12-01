@@ -25,7 +25,7 @@ app.launch(function(request, response) {
                   }
               }
           }
-      }).say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
+      }).say('Welcome to Display. What color do you want to see?').shouldEndSession(false);
 });
 
 app.sessionEnded(function(request, response) {
@@ -39,7 +39,7 @@ app.error = function(exception, request, response) {
 	response.say('Sorry an error occured ' + error.message);
 };
 
-app.intent('count',
+app.intent('color',
 	{
 		"slots": {
 			"fromNumber": "AMAZON.NUMBER",
@@ -55,34 +55,12 @@ app.intent('count',
 		]
 	},
 	function(request, response) {
-		var fromNumber = request.slots['fromNumber'].value;
-		var toNumber = request.slots['toNumber'].value;
+		var color = request.slots['color_slot'].value;
 		
-		if (!toNumber || isNaN(toNumber)) {
-			response.say("Please tell me a number to which I should count").shouldEndSession(false);
+		if (!color) {
+			response.say("Please give me a valid color").shouldEndSession(false);
 		} else {
-			var toNumberInt = parseInt(toNumber);
-			var fromNumberInt = 1;
-			
-			if (fromNumber && !isNaN(fromNumber)) {
-				fromNumberInt = parseInt(fromNumber);
-			}
-			
-			if (fromNumberInt > toNumberInt) {
-				response.say("Sorry, I can't count backwards. Please tell me another number.").shouldEndSession(false);
-			} else {
-				var output = "";
-				
-				for (var i = fromNumberInt; i <= toNumberInt; i++) {
-					output += i;
-					
-					if (i != toNumber) {
-						output += ", ";
-					}
-				}
-				
-				response.say(output);
-			}
+			response.say(color);
 		}
 	}
 );
