@@ -21,7 +21,7 @@ app.launch(function(request, response) {
 			},
 			"textContent" : {
 				"primaryText" : {
-					"text" : "Welcome to the Color Display",
+					"text" : "Name a Color!",
 					"type" : "PlainText"
 				}
 			}
