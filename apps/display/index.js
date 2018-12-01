@@ -6,26 +6,7 @@ var app = new alexa.app('display');
 
 app.launch(function(request, response) {
 //		response.say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
-	response.directive({
-          "type" : "Display.RenderTemplate",
-          "template" : {
-              "type" : "BodyTemplate6",
-              "backButton" : "HIDDEN",
-              "backgroundImage" : {
-                  "contentDescription" : "",
-                  "sources" : [{
-                          "url" : "https://niko132-alexa.herokuapp.com/blue.png"
-                      }
-                  ]
-              },
-              "textContent" : {
-                  "primaryText" : {
-                      "text" : "Color Tap!",
-                      "type" : "PlainText"
-                  }
-              }
-          }
-      }).say('Welcome to Display. What color do you want to see?').shouldEndSession(false);
+	response.say('Welcome to Display. What color do you want to see?').shouldEndSession(false);
 });
 
 app.sessionEnded(function(request, response) {
@@ -60,7 +41,25 @@ app.intent('color',
 		if (!color) {
 			response.say("Please give me a valid color").shouldEndSession(false);
 		} else {
-			response.say(color);
+			response.directive({
+				"type" : "Display.RenderTemplate",
+				"template" : {
+					"type" : "BodyTemplate6",
+					"backButton" : "HIDDEN",
+					"backgroundImage" : {
+						"contentDescription" : "",
+						"sources" : [{
+							"url" : "https://niko132-alexa.herokuapp.com/blue.png"
+						}]
+					},
+					"textContent" : {
+						"primaryText" : {
+							"text" : color,
+							"type" : "PlainText"
+						}
+					}
+				}
+			}).say(color).shouldEndSession(false);
 		}
 	}
 );
