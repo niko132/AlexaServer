@@ -23,6 +23,10 @@ app.launch(function(request, response) {
 				"primaryText" : {
 					"text" : "Colors",
 					"type" : "PlainText"
+				},
+				"secondaryText" : {
+					"text" : "Name a color!",
+					"type" : "PlainText"
 				}
 			}
 		}
