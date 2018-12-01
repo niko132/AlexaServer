@@ -49,7 +49,7 @@ app.intent('color',
 					"backgroundImage" : {
 						"contentDescription" : "",
 						"sources" : [{
-							"url" : "https://niko132-alexa.herokuapp.com/blue.png"
+							"url" : "https://niko132-alexa.herokuapp.com/" + color + ".png"
 						}]
 					},
 					"textContent" : {
