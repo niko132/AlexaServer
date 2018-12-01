@@ -2,7 +2,7 @@ module.change_code = 1;
 'use_strict';
 
 var alexa = require('alexa-app');
-var app = new alexa.app('display');
+var app = new alexa.app('color-display');
 
 app.launch(function(request, response) {
 //		response.say('Welcome to Display. Up to what number should I count?').shouldEndSession(false);
@@ -21,16 +21,12 @@ app.launch(function(request, response) {
 			},
 			"textContent" : {
 				"primaryText" : {
-					"text" : "Colors",
-					"type" : "PlainText"
-				},
-				"secondaryText" : {
-					"text" : "Name a color!",
+					"text" : "Name a Color!",
 					"type" : "PlainText"
 				}
 			}
 		}
-	}).say('Welcome to Display. What color do you want to see?').shouldEndSession(false);
+	}).say('Welcome to the Color Display. What color do you want to see?').shouldEndSession(false);
 });
 
 app.sessionEnded(function(request, response) {
@@ -89,7 +85,7 @@ app.intent('color',
 );
 
 app.intent('AMAZON.HelpIntent', function(request, response) {
-	response.say("I'm the Counter. Just say \"count from five to twenty\" and I will do it.").shouldEndSession(false);
+	response.say("I'm the Color Display. Just name a color and I will show it.").shouldEndSession(false);
 });
 
 app.intent('AMAZON.StopIntent', function(request, response) {
