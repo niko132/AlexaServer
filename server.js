@@ -9,6 +9,12 @@ var server = new AlexaAppServer({
 	verify: true
 });
 
+var express = require('express');
+var port = process.env.PORT || 3000;
+
+var exp = express();
+exp.use(express.static('public'));
+
 server.start();
 
 var Canvas = require('canvas'),
