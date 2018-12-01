@@ -21,10 +21,11 @@ app.launch(function(request, response) {
 			},
 			"textContent" : {
 				"primaryText" : {
-					"text" : "Name a Color!",
+					"text" : "Welcome to the Color Display",
 					"type" : "PlainText"
 				}
-			}
+			},
+			"hintText" : "Name a color!"
 		}
 	}).say('Welcome to the Color Display. What color do you want to see?').shouldEndSession(false);
 });
