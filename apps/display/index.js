@@ -80,7 +80,7 @@ app.intent('color',
 						}
 					}
 				}
-			}).say("Here is " + color).shouldEndSession(false);
+			}).say("Here is " + color).shouldEndSession(true);
 		}
 	}
 );
